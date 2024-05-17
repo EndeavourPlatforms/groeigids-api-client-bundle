@@ -1,0 +1,34 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Endeavour\GroeigidsApiClientBundle\:
+    resource: '../src'
+    exclude:
+      - '../src/DependencyInjection/'
+
+  Http\Factory\Guzzle\RequestFactory: ~
+  Psr\Http\Message\RequestFactoryInterface:
+    alias: Http\Factory\Guzzle\RequestFactory
+
+  GuzzleHttp\Client: ~
+  Psr\Http\Client\ClientInterface:
+    alias: GuzzleHttp\Client
+
+  Endeavour\GroeigidsApiClient\Domain\Builder\ResponseDataBuilder: ~
+  Endeavour\GroeigidsApiClient\Domain\Builder\ResponseDataBuilderInterface:
+    alias: Endeavour\GroeigidsApiClient\Domain\Builder\ResponseDataBuilder
+
+  Opis\JsonSchema\Validator: ~
+
+  Endeavour\GroeigidsApiClient\Domain\Validator\ResponseValidator: ~
+  Endeavour\GroeigidsApiClient\Domain\Validator\ResponseValidatorInterface:
+    alias: Endeavour\GroeigidsApiClient\Domain\Validator\ResponseValidator
+
+  Endeavour\GroeigidsApiClient\Infrastructure\HttpClient\GroeigidsClient:
+    arguments:
+      $apiKey: '%groeigids_api_client.api_key%'
+
+  Endeavour\GroeigidsApiClient\Domain\Port\GroeigidsClientInterface:
+    alias: Endeavour\GroeigidsApiClient\Infrastructure\HttpClient\GroeigidsClient
