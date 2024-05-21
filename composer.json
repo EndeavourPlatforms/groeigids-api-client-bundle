@@ -1,0 +1,40 @@
+{
+  "name": "endeavour/groeigids-api-client-bundle",
+  "description": "A Symfony bundle that implements the Groeigids API client",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "J. Oonk"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Endeavour\\GroeigidsApiClientBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Endeavour\\GroeigidsApiClientBundle\\Test\\": "tests/"
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "8.1.999"
+    }
+  },
+  "require": {
+    "php": "8.1.*",
+    "symfony/framework-bundle": "*",
+    "endeavour/groeigids-api-client": "^0.1.0",
+    "guzzlehttp/guzzle": "^7.4",
+    "guzzlehttp/psr7": "^2.6",
+    "http-interop/http-factory-guzzle": "^1.2"
+  },
+  "extra": {
+    "symfony": {
+      "allow-contrib": true,
+      "require": "6.4.*"
+    }
+  }
+}
