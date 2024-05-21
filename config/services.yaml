@@ -8,9 +8,9 @@ services:
     exclude:
       - '../src/DependencyInjection/'
 
-  Http\Factory\Guzzle\RequestFactory: ~
+  GuzzleHttp\Psr7\HttpFactory: ~
   Psr\Http\Message\RequestFactoryInterface:
-    alias: Http\Factory\Guzzle\RequestFactory
+    alias: GuzzleHttp\Psr7\HttpFactory
 
   GuzzleHttp\Client: ~
   Psr\Http\Client\ClientInterface:
