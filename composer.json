@@ -28,8 +28,7 @@
     "symfony/framework-bundle": "*",
     "endeavour/groeigids-api-client": "^0.1.0",
     "guzzlehttp/guzzle": "^7.4",
-    "guzzlehttp/psr7": "^2.6",
-    "http-interop/http-factory-guzzle": "^1.2"
+    "guzzlehttp/psr7": "^2.6"
   },
   "extra": {
     "symfony": {
